@@ -1,3 +1,5 @@
 {
-    "http.proxy": "http://localhost:3128"
+    "http.proxy": "http://localhost:3128",
+    "https.proxy": "http://localhost:3128",
+    "http.proxyAuthorization": null
 }
