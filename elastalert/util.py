@@ -345,6 +345,7 @@ def build_es_conn_config(conf):
     parsed_conf['profile'] = None
     parsed_conf['es_host'] = os.environ.get('ES_HOST', conf['es_host'])
     parsed_conf['es_port'] = int(os.environ.get('ES_PORT', conf['es_port']))
+    parsed_conf['es_header'] = None
     parsed_conf['es_url_prefix'] = ''
     parsed_conf['es_conn_timeout'] = conf.get('es_conn_timeout', 20)
     parsed_conf['send_get_body_as'] = conf.get('es_send_get_body_as', 'GET')
@@ -381,6 +382,9 @@ def build_es_conn_config(conf):
 
     if 'client_key' in conf:
         parsed_conf['client_key'] = conf['client_key']
+
+    if 'es_header' in conf:
+        parsed_conf['es_header'] = conf['es_header']
 
     if 'es_url_prefix' in conf:
         parsed_conf['es_url_prefix'] = conf['es_url_prefix']
